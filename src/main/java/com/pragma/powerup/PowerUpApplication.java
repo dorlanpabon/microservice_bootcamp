@@ -6,7 +6,7 @@ import reactivefeign.spring.config.EnableReactiveFeignClients;
 
 
 @SpringBootApplication
-@EnableReactiveFeignClients(basePackages = "com.pragma.powerup.infrastructure.output.http.client")
+@EnableReactiveFeignClients(basePackages = "com.pragma.powerup.infrastructure.adapters.http.client")
 public class PowerUpApplication {
 
 	public static void main(String[] args) {

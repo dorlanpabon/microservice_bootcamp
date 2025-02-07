@@ -19,8 +19,8 @@ import reactor.core.publisher.Mono;
 import javax.validation.Valid;
 
 @RestController
-@RequestMapping("/bootcamp")
 @RequiredArgsConstructor
+@RequestMapping("/bootcamp")
 public class BootcampRestController {
 
     private final IBootcampHandler bootcampHandler;
