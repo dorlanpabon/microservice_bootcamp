@@ -1,10 +1,11 @@
 package com.pragma.powerup.application.handler.impl;
 
-import com.pragma.powerup.application.dto.request.BootcampPageRequestDto;
-import com.pragma.powerup.application.dto.request.BootcampRequestDto;
-import com.pragma.powerup.application.dto.response.BootcampResponseDto;
-import com.pragma.powerup.application.mapper.IBootcampRequestMapper;
-import com.pragma.powerup.application.mapper.IBootcampResponseMapper;
+import com.pragma.powerup.infrastructure.entrypoints.dto.request.BootcampPageRequestDto;
+import com.pragma.powerup.infrastructure.entrypoints.dto.request.BootcampRequestDto;
+import com.pragma.powerup.infrastructure.entrypoints.dto.response.BootcampResponseDto;
+import com.pragma.powerup.infrastructure.entrypoints.handler.impl.BootcampHandler;
+import com.pragma.powerup.infrastructure.entrypoints.mapper.IBootcampRequestMapper;
+import com.pragma.powerup.infrastructure.entrypoints.mapper.IBootcampResponseMapper;
 import com.pragma.powerup.domain.api.IBootcampServicePort;
 import com.pragma.powerup.domain.model.Bootcamp;
 import org.junit.jupiter.api.BeforeEach;
