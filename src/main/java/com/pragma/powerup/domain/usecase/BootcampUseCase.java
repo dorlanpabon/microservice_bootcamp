@@ -52,12 +52,12 @@ public class BootcampUseCase implements IBootcampServicePort {
                 .switchIfEmpty(Mono.error(new DomainException(DomainConstants.INVALID_SORT_DIRECTION)))
                 .flatMapMany(validParams ->
                         bootcampPersistencePort.listBootcamps(validParams.getPage(), validParams.getSize(), validParams.getDirection(), validParams.getField())
-                                .flatMap(capacity ->
-                                        capacityPersistencePort.findCapacitiesByBootcamp(capacity.getId())
+                                .flatMap(bootcamp ->
+                                        capacityPersistencePort.findCapacitiesByBootcamp(bootcamp.getId())
                                                 .collectList()
                                                 .map(capacities -> {
-                                                    capacity.setCapacityList(capacities);
-                                                    return capacity;
+                                                    bootcamp.setCapacityList(capacities);
+                                                    return bootcamp;
                                                 })
                                 )
                 );
