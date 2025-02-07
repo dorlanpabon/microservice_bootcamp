@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS `capacities`
+(
+`id` INT NOT NULL AUTO_INCREMENT ,
+`name` VARCHAR(50) NOT NULL UNIQUE ,
+`description` VARCHAR(90) NOT NULL ,
+PRIMARY KEY (`id`)
+);
