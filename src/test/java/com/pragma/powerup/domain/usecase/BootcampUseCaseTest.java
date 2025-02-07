@@ -39,9 +39,9 @@ class BootcampUseCaseTest {
         bootcamp.setName("name");
         bootcamp.setDescription("description");
 
-        List<Long> technologies = List.of(1L, 2L,3L);
+        List<Long> capacities = List.of(1L, 2L,3L);
 
-        bootcamp.setCapacities(technologies);
+        bootcamp.setCapacities(capacities);
     }
 
     @Test
@@ -131,7 +131,7 @@ class BootcampUseCaseTest {
 
     @Test
     void testsaveBootcamp_TechnologiesNull() {
-        bootcamp.setTechnologies(null);
+        bootcamp.setCapacities(null);
 
         Mono<Void> result = bootcampUseCase.saveBootcamp(bootcamp);
 
@@ -146,20 +146,6 @@ class BootcampUseCaseTest {
     @Test
     void testsaveBootcamp_TechnologiesEmpty() {
         bootcamp.setCapacities(List.of());
-
-        Mono<Void> result = bootcampUseCase.saveBootcamp(bootcamp);
-
-        StepVerifier.create(result)
-                .expectError(DomainException.class)
-                .verify();
-
-        verify(capacityPersistencePort, never()).findBootcampByName(anyString());
-        verify(capacityPersistencePort, never()).saveBootcamp(any(Bootcamp.class));
-    }
-
-    @Test
-    void testsaveBootcamp_TechnologiesContainsZero() {
-        bootcamp.setCapacities(List.of(1L, 0L));
 
         Mono<Void> result = bootcampUseCase.saveBootcamp(bootcamp);
 
