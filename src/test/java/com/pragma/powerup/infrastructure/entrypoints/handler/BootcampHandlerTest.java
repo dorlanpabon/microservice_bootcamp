@@ -1,4 +1,4 @@
-package com.pragma.powerup.application.handler.impl;
+package com.pragma.powerup.infrastructure.entrypoints.handler;
 
 import com.pragma.powerup.infrastructure.entrypoints.dto.request.BootcampPageRequestDto;
 import com.pragma.powerup.infrastructure.entrypoints.dto.request.BootcampRequestDto;
